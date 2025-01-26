@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profit Prediction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #4CAF50;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    input[type="text"],
+    select {
+      height: 45px;
+      margin-bottom: 1.5rem;
+      padding: 0 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      height: 50px;
+      background: linear-gradient(135deg, #4CAF50, #81C784);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: linear-gradient(135deg, #388E3C, #66BB6A);
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      color: #333;
+    }
+
+    .error {
+      color: red;
+      font-size: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Profit Prediction</h1>
+    <form method="post" action="/">
+      <label for="state">State:</label>
+      <select id="state" name="state">
+        <option value="New York">New York</option>
+        <option value="California">California</option>
+        <option value="Florida">Florida</option>
+      </select>
+
+      <label for="rd_spend">R&D Spend:</label>
+      <input type="text" id="rd_spend" name="rd_spend">
+
+      <label for="admin">Administration:</label>
+      <input type="text" id="admin" name="admin">
+
+      <label for="marketing_spend">Marketing Spend:</label>
+      <input type="text" id="marketing_spend" name="marketing_spend">
+
+      <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+    <p>Predicted profit: ${{ prediction }}</p>
+    {% endif %}
+  </div>
+</body>
+
+</html>
