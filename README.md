@@ -75,7 +75,7 @@ The `50_Startups.csv` dataset contains the following columns:
 - **R&D Spend:** The amount of money spent on research and development.
 - **Administration:** The amount of money spent on administration.
 - **Marketing Spend:** The amount of money spent on marketing.
-- **State:** The state in which the startup operates.
+- **State:** The US state in which the startup operates.
 - **Profit:** The profit earned by the startup (target variable).
 
 ---
